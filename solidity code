@@ -1,0 +1,26 @@
+ pragma solidity ^0.4.18<=0.6.12;
+ 
+ contract AmulMILK
+ {
+     string CustomerName;      //name of the buyer of milk
+     string MilkType;          // Milk type:full cream,toned etc. 
+     string SupplierName;      // Supplier of amul milk to customer.
+     string add;               //address of the customer
+     int quantity;             // quantity in litres
+     int price;               // net amount payable
+ 
+ function AmulMILK(string NewCustName, string newType, string NewSupplier, string Newadd, int Newquantity, int NewPrice) public
+ {
+    CustomerName=NewCustName;
+    MilkType=newType;
+    SupplierName=NewSupplier;
+    add=Newadd;
+    quantity=Newquantity;
+    price=NewPrice;
+ }
+  function GetDetails() public view returns( string,string,string,string,int,int)
+  {
+      return(CustomerName,MilkType,SupplierName,add,quantity,price);
+  }
+ 
+ }
